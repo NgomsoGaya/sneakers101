@@ -133,7 +133,7 @@ export default function render() {
   //END-POINTS ACCESSING THE JSON
   async function displayAllShoes() {
     try {
-      const response = await axios.get("https://shoeshop-ess4.onrender.com/api/shoes");
+      const response = await axios.get("https://sneakers101.onrender.com/api/shoes");
 
       return response.data;
     } catch (error) {
@@ -143,7 +143,7 @@ export default function render() {
   async function displayFilteredByBrandColorSize(brand, color, size) {
     try {
       const response = await axios.get(
-        `https://shoeshop-ess4.onrender.com/api/shoes/brand/${brand}/color/${color}/size/${size}`
+        `https://sneakers101.onrender.com/api/shoes/brand/${brand}/color/${color}/size/${size}`
       );
       
       return response.data
@@ -154,7 +154,7 @@ export default function render() {
   async function displayFilteredByBrandSize(brand, size) {
     try {
       const response = await axios.get(
-        `https://shoeshop-ess4.onrender.com/api/shoes/brand/${brand}/size/${size}`
+        `https://sneakers101.onrender.com/api/shoes/brand/${brand}/size/${size}`
       );
       
       return response.data
@@ -165,7 +165,7 @@ export default function render() {
   async function displayFilteredByBrandColor(brand, color) {
     try {
       const response = await axios.get(
-        `https://shoeshop-ess4.onrender.com/api/shoes/brand/${brand}/color/${color}`
+        `https://sneakers101.onrender.com/api/shoes/brand/${brand}/color/${color}`
       );
       
       return response.data
@@ -176,7 +176,7 @@ export default function render() {
   async function displayFilteredByColorSize(color, size) {
     try {
        const response = await axios.get(
-      `https://shoeshop-ess4.onrender.com/api/shoes/color/${color}/size/${size}`
+      `https://sneakers101.onrender.com/api/shoes/color/${color}/size/${size}`
     );
     
     return response.data
@@ -188,7 +188,7 @@ export default function render() {
   async function displayFilteredByBrand(brand) {
     try {
       const response = await axios.get(
-        `https://shoeshop-ess4.onrender.com/api/shoes/brand/${brand}`
+        `https://sneakers101.onrender.com/api/shoes/brand/${brand}`
       );
 
       return response.data;
@@ -199,7 +199,7 @@ export default function render() {
   async function displayFilteredBySize(size) {
     try {
       const response = await axios.get(
-        `https://shoeshop-ess4.onrender.com/api/shoes/size/${size}`
+        `https://sneakers101.onrender.com/api/shoes/size/${size}`
       );
 
       return response.data
@@ -210,7 +210,7 @@ export default function render() {
   async function displayFilteredByColor(color) {
     try {
       const response = await axios.get(
-        `https://shoeshop-ess4.onrender.com/api/shoes/color/${color}`
+        `https://sneakers101.onrender.com/api/shoes/color/${color}`
       );
 
       return response.data
@@ -220,7 +220,7 @@ export default function render() {
   }
   async function displayCart() {
     try {
-      const response = await axios.get(`https://shoeshop-ess4.onrender.com/api/cart`);
+      const response = await axios.get(`https://sneakers101.onrender.com/api/cart`);
       
       return response.data
     } catch (error) {
