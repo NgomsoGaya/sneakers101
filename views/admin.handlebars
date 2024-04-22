@@ -1,0 +1,24 @@
+<div class="container">
+<h2>Add New Shoe to Inventory</h2>
+  <form id="add-shoe-form" action="/admin" method="post">
+    <label for="shoeName">Shoe Name:</label>
+    <input type="text" id="shoeName" name="shoeName" required>
+    <br>
+
+    <label for="shoeDescription">Description:</label>
+    <textarea id="shoeDescription" name="shoeDescription"></textarea>
+    <br>
+
+    <label for="shoePrice">Price ($):</label>
+    <input type="number" id="shoePrice" name="shoePrice" step="0.01" required>
+    <br>
+
+    <label for="shoeImage">Image URL:</label>
+    <input type="url" id="shoeImage" name="shoeImage">
+    <br>
+
+    <!-- Add more fields for shoe details (e.g., brand, size, color, etc.) as needed -->
+
+    <button type="submit">Add Shoe</button>
+  </form>
+</div>

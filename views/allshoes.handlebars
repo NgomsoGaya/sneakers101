@@ -1,0 +1,109 @@
+<!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/signup">Sign Up</a></li>
+      <li><a href="/cart">Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Slider -->
+  <div id="slider">
+    <!-- Add your slider content here -->
+    <div class="slider">
+        <div class="slide"><img src="/css/slider1.webp" alt="Slide 1"></div>
+        <div class="slide"><img src="https://thefoschini.vtexassets.com/arquivos/ids/94654632-1200-1200?v=638342884250100000&width=1200&height=1200&aspect=true" alt="Slide 2"></div>
+        <div class="slide"><img src="https://thefoschini.vtexassets.com/arquivos/ids/94835030-1200-1200?v=638343157582270000&width=1200&height=1200&aspect=true" alt="Slide 3"></div>
+    </div>
+    <button id="prev-slide" class="slider-button">&#9665;</button>
+    <button id="next-slide" class="slider-button">&#9655;</button>
+  </div>
+
+  
+<form action="/filter" method="POST">
+<div class="side-n-shoes">
+  <!-- Sidebar for Filtering Inventory -->
+  <div id="sidebar">
+    <!-- Add filtering options here (e.g., brand, size, color) -->
+    <div class="filter-group">
+      <label for="brand">Brand:</label>
+      <select id="brand" name="brand">
+        <option value="all">All Brands</option>
+        <option value="Nike">Nike</option>
+        <option value="Adidas">Adidas</option>
+        <option value="Converse">Converse</option>
+        <option value="New Balance">New Balance</option>
+
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="size">Size:</label>
+      <select id="size" name="size">
+        <option value="all">All Sizes</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label for="color">Color:</label>
+      <select id="color" name="color">
+        <option value="all">All Colors</option>
+        <option value="Black">Black</option>
+        <option value="White">White</option>
+        <option value="Green">Green</option>
+        <option value="Gray">Gray</option>
+        <option value="Brown">Brown</option>
+        <option value="Blue">Blue</option>
+  
+      </select>
+    </div>
+    <button type="submit" class="filter">Filter</button>
+    </form>
+
+      <button type="reset">Reset</button>
+  </div>
+
+
+<form action="/shop/:username" method="post">  
+<!-- Inventory Container -->
+<div id="inventory-container">
+    <!-- Handlebars template for inventory items goes here -->
+    {{#each response}}
+        <div class="inventory-item" name="shoeId" data-shoe-id="{{this.shoe_id}}">
+          <img src="{{this.image}}" alt="{{this.name}}" class="inventory-item-image">
+          <div class="inventory-item-details">
+            <h3 name="shoeName">{{this.brand}} {{this.name}}</h3>
+            <p>R{{this.price}}</p>
+            <p>Size(s): {{size}}</p>
+            <p>Color(s): {{this.color}}</p>
+            <p>Instock: {{this.instock}}</p>
+          </div>
+          <button type="button submit"  class="add-to-cart-btn"  data-shoe-id="{{this.shoe_id}}">Add to cart</button>
+        </div>
+       
+    {{/each}}
+</div>
+
+<script>
+ 
+  let shoeIdClick;
+
+  $(".inventory-item").on("click", ".add-to-cart-btn", function(e){
+  let buttonElement = $(this);
+
+ shoeIdClick = buttonElement.data("shoe-id");
+
+ console.log("Shoe ID:", shoeIdClick);
+
+ })
+</script>  
+
+</form>
+
+</div>
+              
